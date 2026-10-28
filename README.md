@@ -8,10 +8,10 @@ Holidaze is an online booking website where the user can book a cozy stay at a c
 
 Holidaze is my project exam 2 and is a part of my studies to become a front-end developer.
 
-#### Live Demo: [SageShop][sageshop]
+#### Live Demo: [Holidaze][holidaze]
 
 [//]: # 'Source definitions'
-[sageshop]: https://sageshop.netlify.app/ 'SageShop'
+[sageshop]: 'Holidaze'
 
 ## Feature overview
 
