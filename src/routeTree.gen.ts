@@ -8,52 +8,308 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root';
-import { Route as IndexRouteImport } from './routes/index';
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutIndexRouteImport } from './routes/about/index'
+import { Route as BookingsBookingIdRouteImport } from './routes/bookings/$bookingId'
+import { Route as ContactIndexRouteImport } from './routes/contact/index'
+import { Route as LoginIndexRouteImport } from './routes/login/index'
+import { Route as ProfileIndexRouteImport } from './routes/profile/index'
+import { Route as RegisterIndexRouteImport } from './routes/register/index'
+import { Route as TermsIndexRouteImport } from './routes/terms/index'
+import { Route as VenuesIndexRouteImport } from './routes/venues/index'
+import { Route as VenuesNewRouteImport } from './routes/venues/new'
+import { Route as VenuesVenueIdIndexRouteImport } from './routes/venues/$venueId/index'
+import { Route as VenuesVenueIdBookingsRouteImport } from './routes/venues/$venueId/bookings'
+import { Route as VenuesVenueIdEditRouteImport } from './routes/venues/$venueId/edit'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/about/',
+  path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookingsBookingIdRoute = BookingsBookingIdRouteImport.update({
+  id: '/bookings/$bookingId',
+  path: '/bookings/$bookingId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactIndexRoute = ContactIndexRouteImport.update({
+  id: '/contact/',
+  path: '/contact/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginIndexRoute = LoginIndexRouteImport.update({
+  id: '/login/',
+  path: '/login/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileIndexRoute = ProfileIndexRouteImport.update({
+  id: '/profile/',
+  path: '/profile/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterIndexRoute = RegisterIndexRouteImport.update({
+  id: '/register/',
+  path: '/register/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsIndexRoute = TermsIndexRouteImport.update({
+  id: '/terms/',
+  path: '/terms/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VenuesIndexRoute = VenuesIndexRouteImport.update({
+  id: '/venues/',
+  path: '/venues/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VenuesNewRoute = VenuesNewRouteImport.update({
+  id: '/venues/new',
+  path: '/venues/new',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VenuesVenueIdIndexRoute = VenuesVenueIdIndexRouteImport.update({
+  id: '/venues/$venueId/',
+  path: '/venues/$venueId/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VenuesVenueIdBookingsRoute = VenuesVenueIdBookingsRouteImport.update({
+  id: '/venues/$venueId/bookings',
+  path: '/venues/$venueId/bookings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VenuesVenueIdEditRoute = VenuesVenueIdEditRouteImport.update({
+  id: '/venues/$venueId/edit',
+  path: '/venues/$venueId/edit',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute;
+  '/': typeof IndexRoute
+  '/bookings/$bookingId': typeof BookingsBookingIdRoute
+  '/venues/new': typeof VenuesNewRoute
+  '/about/': typeof AboutIndexRoute
+  '/contact/': typeof ContactIndexRoute
+  '/login/': typeof LoginIndexRoute
+  '/profile/': typeof ProfileIndexRoute
+  '/register/': typeof RegisterIndexRoute
+  '/terms/': typeof TermsIndexRoute
+  '/venues/': typeof VenuesIndexRoute
+  '/venues/$venueId/bookings': typeof VenuesVenueIdBookingsRoute
+  '/venues/$venueId/edit': typeof VenuesVenueIdEditRoute
+  '/venues/$venueId/': typeof VenuesVenueIdIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute;
+  '/': typeof IndexRoute
+  '/bookings/$bookingId': typeof BookingsBookingIdRoute
+  '/venues/new': typeof VenuesNewRoute
+  '/about': typeof AboutIndexRoute
+  '/contact': typeof ContactIndexRoute
+  '/login': typeof LoginIndexRoute
+  '/profile': typeof ProfileIndexRoute
+  '/register': typeof RegisterIndexRoute
+  '/terms': typeof TermsIndexRoute
+  '/venues': typeof VenuesIndexRoute
+  '/venues/$venueId/bookings': typeof VenuesVenueIdBookingsRoute
+  '/venues/$venueId/edit': typeof VenuesVenueIdEditRoute
+  '/venues/$venueId': typeof VenuesVenueIdIndexRoute
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport;
-  '/': typeof IndexRoute;
+  __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
+  '/bookings/$bookingId': typeof BookingsBookingIdRoute
+  '/venues/new': typeof VenuesNewRoute
+  '/about/': typeof AboutIndexRoute
+  '/contact/': typeof ContactIndexRoute
+  '/login/': typeof LoginIndexRoute
+  '/profile/': typeof ProfileIndexRoute
+  '/register/': typeof RegisterIndexRoute
+  '/terms/': typeof TermsIndexRoute
+  '/venues/': typeof VenuesIndexRoute
+  '/venues/$venueId/bookings': typeof VenuesVenueIdBookingsRoute
+  '/venues/$venueId/edit': typeof VenuesVenueIdEditRoute
+  '/venues/$venueId/': typeof VenuesVenueIdIndexRoute
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: '/';
-  fileRoutesByTo: FileRoutesByTo;
-  to: '/';
-  id: '__root__' | '/';
-  fileRoutesById: FileRoutesById;
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths:
+    | '/'
+    | '/bookings/$bookingId'
+    | '/venues/new'
+    | '/about/'
+    | '/contact/'
+    | '/login/'
+    | '/profile/'
+    | '/register/'
+    | '/terms/'
+    | '/venues/'
+    | '/venues/$venueId/bookings'
+    | '/venues/$venueId/edit'
+    | '/venues/$venueId/'
+  fileRoutesByTo: FileRoutesByTo
+  to:
+    | '/'
+    | '/bookings/$bookingId'
+    | '/venues/new'
+    | '/about'
+    | '/contact'
+    | '/login'
+    | '/profile'
+    | '/register'
+    | '/terms'
+    | '/venues'
+    | '/venues/$venueId/bookings'
+    | '/venues/$venueId/edit'
+    | '/venues/$venueId'
+  id:
+    | '__root__'
+    | '/'
+    | '/bookings/$bookingId'
+    | '/venues/new'
+    | '/about/'
+    | '/contact/'
+    | '/login/'
+    | '/profile/'
+    | '/register/'
+    | '/terms/'
+    | '/venues/'
+    | '/venues/$venueId/bookings'
+    | '/venues/$venueId/edit'
+    | '/venues/$venueId/'
+  fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute;
+  IndexRoute: typeof IndexRoute
+  BookingsBookingIdRoute: typeof BookingsBookingIdRoute
+  VenuesNewRoute: typeof VenuesNewRoute
+  AboutIndexRoute: typeof AboutIndexRoute
+  ContactIndexRoute: typeof ContactIndexRoute
+  LoginIndexRoute: typeof LoginIndexRoute
+  ProfileIndexRoute: typeof ProfileIndexRoute
+  RegisterIndexRoute: typeof RegisterIndexRoute
+  TermsIndexRoute: typeof TermsIndexRoute
+  VenuesIndexRoute: typeof VenuesIndexRoute
+  VenuesVenueIdBookingsRoute: typeof VenuesVenueIdBookingsRoute
+  VenuesVenueIdEditRoute: typeof VenuesVenueIdEditRoute
+  VenuesVenueIdIndexRoute: typeof VenuesVenueIdIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
-      id: '/';
-      path: '/';
-      fullPath: '/';
-      preLoaderRoute: typeof IndexRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/': {
+      id: '/about/'
+      path: '/about'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bookings/$bookingId': {
+      id: '/bookings/$bookingId'
+      path: '/bookings/$bookingId'
+      fullPath: '/bookings/$bookingId'
+      preLoaderRoute: typeof BookingsBookingIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact/': {
+      id: '/contact/'
+      path: '/contact'
+      fullPath: '/contact/'
+      preLoaderRoute: typeof ContactIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login/': {
+      id: '/login/'
+      path: '/login'
+      fullPath: '/login/'
+      preLoaderRoute: typeof LoginIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile/': {
+      id: '/profile/'
+      path: '/profile'
+      fullPath: '/profile/'
+      preLoaderRoute: typeof ProfileIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register/': {
+      id: '/register/'
+      path: '/register'
+      fullPath: '/register/'
+      preLoaderRoute: typeof RegisterIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms/': {
+      id: '/terms/'
+      path: '/terms'
+      fullPath: '/terms/'
+      preLoaderRoute: typeof TermsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/venues/': {
+      id: '/venues/'
+      path: '/venues'
+      fullPath: '/venues/'
+      preLoaderRoute: typeof VenuesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/venues/new': {
+      id: '/venues/new'
+      path: '/venues/new'
+      fullPath: '/venues/new'
+      preLoaderRoute: typeof VenuesNewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/venues/$venueId/': {
+      id: '/venues/$venueId/'
+      path: '/venues/$venueId'
+      fullPath: '/venues/$venueId/'
+      preLoaderRoute: typeof VenuesVenueIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/venues/$venueId/bookings': {
+      id: '/venues/$venueId/bookings'
+      path: '/venues/$venueId/bookings'
+      fullPath: '/venues/$venueId/bookings'
+      preLoaderRoute: typeof VenuesVenueIdBookingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/venues/$venueId/edit': {
+      id: '/venues/$venueId/edit'
+      path: '/venues/$venueId/edit'
+      fullPath: '/venues/$venueId/edit'
+      preLoaderRoute: typeof VenuesVenueIdEditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-};
+  BookingsBookingIdRoute: BookingsBookingIdRoute,
+  VenuesNewRoute: VenuesNewRoute,
+  AboutIndexRoute: AboutIndexRoute,
+  ContactIndexRoute: ContactIndexRoute,
+  LoginIndexRoute: LoginIndexRoute,
+  ProfileIndexRoute: ProfileIndexRoute,
+  RegisterIndexRoute: RegisterIndexRoute,
+  TermsIndexRoute: TermsIndexRoute,
+  VenuesIndexRoute: VenuesIndexRoute,
+  VenuesVenueIdBookingsRoute: VenuesVenueIdBookingsRoute,
+  VenuesVenueIdEditRoute: VenuesVenueIdEditRoute,
+  VenuesVenueIdIndexRoute: VenuesVenueIdIndexRoute,
+}
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>();
+  ._addFileTypes<FileRouteTypes>()
