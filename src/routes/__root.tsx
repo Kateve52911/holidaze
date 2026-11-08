@@ -5,14 +5,18 @@ import {
 } from '@tanstack/react-router';
 import type { QueryClient } from '@tanstack/react-query';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
 const RootLayout = () => (
   <>
     <div className="flex flex-col min-h-screen">
       <HeadContent />
+      <Header />
       <div className="flex-1 pb-10">
         <Outlet />
       </div>
+      <Footer />
     </div>
     <TanStackRouterDevtools />
   </>
