@@ -5,7 +5,7 @@ import AuthButtons from '@/components/layout/AuthButtons.tsx';
 
 export default function Header() {
   return (
-    <header className=" p-2 bg-white sticky rounded-lg right-10 left-10 top-5 z-50 mx-10 shadow-card">
+    <header className=" p-2 bg-white sticky rounded-lg mt-5 top-5 z-50 mx-10 shadow-card">
       <div className=" w-full">
         <div className="grid grid-cols-[1fr_auto] items-center gap-2">
           <div className=" flex items-center">
@@ -46,8 +46,10 @@ export default function Header() {
               </Link>
             </nav>
           </div>
-          <UserAvatar />
-          <AuthButtons />
+          <div className="mr-8">
+            <UserAvatar />
+            <AuthButtons />
+          </div>
         </div>
       </div>
     </header>

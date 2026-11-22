@@ -1,4 +1,4 @@
-import type { Profile } from '@/types/profile/profile';
+import type { Profile } from '@/types/profile.ts';
 import { TOKEN_STORAGE_KEY, USER_STORAGE_KEY } from '@/config/constants';
 
 export function storeUser(user: Profile): void {
