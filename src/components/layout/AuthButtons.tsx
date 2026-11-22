@@ -1,9 +1,16 @@
 import { useAuth } from '@/auth/useAuth';
 import { Button } from '@/components/ui/button';
-import { Link } from '@tanstack/react-router';
+import { Link, useNavigate } from '@tanstack/react-router';
 
 export default function AuthButtons() {
   const { isLoggedIn, isVenueManager, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    void navigate({ to: '/' });
+  };
+
   if (!isLoggedIn) {
     return (
       <div className="flex items-center gap-4">
@@ -23,8 +30,8 @@ export default function AuthButtons() {
           Register a new venue
         </Button>
       )}
-      <Button variant="secondary" onClick={logout}>
-        Logout
+      <Button variant="secondary" onClick={handleLogout}>
+        Log out
       </Button>
     </div>
   );

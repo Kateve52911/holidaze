@@ -1,6 +1,7 @@
 import { Link } from '@tanstack/react-router';
 import { HouseHeart } from 'lucide-react';
 import UserAvatar from '@/components/layout/Avatar.tsx';
+import AuthButtons from '@/components/layout/AuthButtons.tsx';
 
 export default function Header() {
   return (
@@ -46,6 +47,7 @@ export default function Header() {
             </nav>
           </div>
           <UserAvatar />
+          <AuthButtons />
         </div>
       </div>
     </header>

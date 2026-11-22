@@ -1,33 +1,32 @@
-import type { Profile } from '@/types/profile/profile.ts';
-
-export const USER_KEY = 'currentUser';
-
-export function saveKey(key: string, value: string): void {
-  localStorage.setItem(key, value);
-}
-
-export function loadKey(key: string): string | null {
-  return localStorage.getItem(key);
-}
-
-export function removeKey(key: string): void {
-  localStorage.removeItem(key);
-}
+import type { Profile } from '@/types/profile/profile';
+import { TOKEN_STORAGE_KEY, USER_STORAGE_KEY } from '@/config/constants';
 
 export function storeUser(user: Profile): void {
-  localStorage.setItem(USER_KEY, JSON.stringify(user));
+  localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(user));
 }
 
 export function removeUser(): void {
-  localStorage.removeItem(USER_KEY);
+  localStorage.removeItem(USER_STORAGE_KEY);
 }
 
 export function loadCurrentUser(): Profile | null {
-  const user = localStorage.getItem(USER_KEY);
+  const user = localStorage.getItem(USER_STORAGE_KEY);
   try {
     return user ? JSON.parse(user) : null;
   } catch {
-    removeKey(USER_KEY);
+    removeUser();
     return null;
   }
+}
+
+export function storeToken(token: string) {
+  localStorage.setItem(TOKEN_STORAGE_KEY, token);
+}
+
+export function loadToken(): string | null {
+  return localStorage.getItem(TOKEN_STORAGE_KEY);
+}
+
+export function removeToken(): void {
+  localStorage.removeItem(TOKEN_STORAGE_KEY);
 }
