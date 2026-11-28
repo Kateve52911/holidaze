@@ -1,26 +1,20 @@
-import { Button } from '@/components/ui/button';
-import { login } from '@/services/api/auth/login';
 import { createFileRoute } from '@tanstack/react-router';
+import RegisterForm from '@/components/forms/RegisterForm.tsx';
+import { HouseHeart } from 'lucide-react';
 
 export const Route = createFileRoute('/register/')({
   component: RouteComponent,
 });
 
 function RouteComponent() {
-  const testObject = {
-    email: 'test_holidaze_98@stud.noroff.no',
-    password: 'test_holdaze_98',
-  };
-
-  async function handleOnClick() {
-    const result = await login(testObject);
-    console.log(result);
-  }
-
   return (
-    <div>
-      Hello "/register/"
-      <Button onClick={handleOnClick}>Log in</Button>
+    <div className="flex flex-col">
+      <div className="flex flex-col items-center">
+        <HouseHeart color="#6D1F2E" strokeWidth={1.25} size={75} />
+        <h1 className="text-primary">Create account </h1>
+      </div>
+
+      <RegisterForm />
     </div>
   );
 }

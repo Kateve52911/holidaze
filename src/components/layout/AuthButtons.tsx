@@ -13,7 +13,7 @@ export default function AuthButtons() {
 
   if (!isLoggedIn) {
     return (
-      <div className="flex items-center gap-4">
+      <div className="flex flex-col lg:flex-row w-full lg:items-center gap-4">
         <Button variant="secondary" render={<Link to="/login" />}>
           Sign in
         </Button>
@@ -24,7 +24,7 @@ export default function AuthButtons() {
     );
   }
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex flex-col lg:flex-row w-full lg:items-center gap-4">
       {isVenueManager && (
         <Button variant="default" render={<Link to="/venues/new" />}>
           Register a new venue
